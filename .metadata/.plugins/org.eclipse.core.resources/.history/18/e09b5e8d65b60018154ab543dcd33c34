@@ -1,0 +1,17 @@
+package Nodo;
+
+public class Nodo {
+	int costo;
+	int funcionF;
+	int heuristicaH;
+	int heuristicaG;
+	
+	String estado[][] = null;
+	
+	public Nodo() {}
+	public Nodo(int nuevoEstado[][]) {
+		this.estado = nuevoEstado;
+	}
+	
+
+}

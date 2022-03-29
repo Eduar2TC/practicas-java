@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://consumo_sw" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://consumo_sw" xmlns:intf="http://consumo_sw" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://consumo_sw" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="regresaId">
+    <complexType>
+     <sequence>
+      <element name="qr" type="xsd:string"/>
+      <element name="idCol" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="regresaIdResponse">
+    <complexType>
+     <sequence>
+      <element name="regresaIdReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="registrarUsuario">
+    <complexType>
+     <sequence>
+      <element name="noma" type="xsd:string"/>
+      <element name="pasa" type="xsd:string"/>
+      <element name="nom" type="xsd:string"/>
+      <element name="pas" type="xsd:string"/>
+      <element name="niv" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="registrarUsuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="registrarUsuarioReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cambiarPwd">
+    <complexType>
+     <sequence>
+      <element name="noma" type="xsd:string"/>
+      <element name="pasa" type="xsd:string"/>
+      <element name="nom" type="xsd:string"/>
+      <element name="pas" type="xsd:string"/>
+      <element name="npas" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cambiarPwdResponse">
+    <complexType>
+     <sequence>
+      <element name="cambiarPwdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminarUsuario">
+    <complexType>
+     <sequence>
+      <element name="noma" type="xsd:string"/>
+      <element name="pasa" type="xsd:string"/>
+      <element name="nom" type="xsd:string"/>
+      <element name="pas" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminarUsuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="eliminarUsuarioReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="generaXML">
+    <complexType>
+     <sequence>
+      <element name="clavp" type="xsd:string"/>
+      <element name="nomp" type="xsd:string"/>
+      <element name="catp" type="xsd:string"/>
+      <element name="precd" type="xsd:float"/>
+      <element name="mard" type="xsd:string"/>
+      <element name="desd" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="generaXMLResponse">
+    <complexType>
+     <sequence>
+      <element name="generaXMLReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultar">
+    <complexType/>
+   </element>
+   <element name="consultarResponse">
+    <complexType>
+     <sequence>
+      <element name="consultarReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="registrarProd">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+      <element name="pas" type="xsd:string"/>
+      <element name="clavp" type="xsd:string"/>
+      <element name="nomp" type="xsd:string"/>
+      <element name="catp" type="xsd:string"/>
+      <element name="precd" type="xsd:float"/>
+      <element name="mard" type="xsd:string"/>
+      <element name="desd" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="registrarProdResponse">
+    <complexType>
+     <sequence>
+      <element name="registrarProdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="borrarProd">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+      <element name="pas" type="xsd:string"/>
+      <element name="clavp" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="borrarProdResponse">
+    <complexType>
+     <sequence>
+      <element name="borrarProdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="actualizarProd">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+      <element name="pas" type="xsd:string"/>
+      <element name="clavp" type="xsd:string"/>
+      <element name="nclavp" type="xsd:string"/>
+      <element name="nomp" type="xsd:string"/>
+      <element name="catp" type="xsd:string"/>
+      <element name="precd" type="xsd:float"/>
+      <element name="mard" type="xsd:string"/>
+      <element name="desd" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="actualizarProdResponse">
+    <complexType>
+     <sequence>
+      <element name="actualizarProdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminarProd">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+      <element name="pas" type="xsd:string"/>
+      <element name="clavp" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminarProdResponse">
+    <complexType>
+     <sequence>
+      <element name="eliminarProdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="obtenerProductos">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+      <element name="pas" type="xsd:string"/>
+      <element name="cat" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="obtenerProductosResponse">
+    <complexType>
+     <sequence>
+      <element name="obtenerProductosReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="obtenerDetalles">
+    <complexType>
+     <sequence>
+      <element name="nom" type="xsd:string"/>
+      <element name="pas" type="xsd:string"/>
+      <element name="clav" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="obtenerDetallesResponse">
+    <complexType>
+     <sequence>
+      <element name="obtenerDetallesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="eliminarProdResponse">
+
+      <wsdl:part element="impl:eliminarProdResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="obtenerDetallesResponse">
+
+      <wsdl:part element="impl:obtenerDetallesResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="borrarProdResponse">
+
+      <wsdl:part element="impl:borrarProdResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminarProdRequest">
+
+      <wsdl:part element="impl:eliminarProd" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generaXMLResponse">
+
+      <wsdl:part element="impl:generaXMLResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="obtenerProductosRequest">
+
+      <wsdl:part element="impl:obtenerProductos" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="regresaIdRequest">
+
+      <wsdl:part element="impl:regresaId" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="registrarUsuarioRequest">
+
+      <wsdl:part element="impl:registrarUsuario" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="registrarProdRequest">
+
+      <wsdl:part element="impl:registrarProd" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="registrarProdResponse">
+
+      <wsdl:part element="impl:registrarProdResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="obtenerProductosResponse">
+
+      <wsdl:part element="impl:obtenerProductosResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultarResponse">
+
+      <wsdl:part element="impl:consultarResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultarRequest">
+
+      <wsdl:part element="impl:consultar" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="actualizarProdRequest">
+
+      <wsdl:part element="impl:actualizarProd" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="regresaIdResponse">
+
+      <wsdl:part element="impl:regresaIdResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="cambiarPwdRequest">
+
+      <wsdl:part element="impl:cambiarPwd" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="cambiarPwdResponse">
+
+      <wsdl:part element="impl:cambiarPwdResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="actualizarProdResponse">
+
+      <wsdl:part element="impl:actualizarProdResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="generaXMLRequest">
+
+      <wsdl:part element="impl:generaXML" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminarUsuarioResponse">
+
+      <wsdl:part element="impl:eliminarUsuarioResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="borrarProdRequest">
+
+      <wsdl:part element="impl:borrarProd" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminarUsuarioRequest">
+
+      <wsdl:part element="impl:eliminarUsuario" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="registrarUsuarioResponse">
+
+      <wsdl:part element="impl:registrarUsuarioResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="obtenerDetallesRequest">
+
+      <wsdl:part element="impl:obtenerDetalles" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="serwew">
+
+      <wsdl:operation name="regresaId">
+
+         <wsdl:input message="impl:regresaIdRequest" name="regresaIdRequest"/>
+
+         <wsdl:output message="impl:regresaIdResponse" name="regresaIdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="registrarUsuario">
+
+         <wsdl:input message="impl:registrarUsuarioRequest" name="registrarUsuarioRequest"/>
+
+         <wsdl:output message="impl:registrarUsuarioResponse" name="registrarUsuarioResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cambiarPwd">
+
+         <wsdl:input message="impl:cambiarPwdRequest" name="cambiarPwdRequest"/>
+
+         <wsdl:output message="impl:cambiarPwdResponse" name="cambiarPwdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminarUsuario">
+
+         <wsdl:input message="impl:eliminarUsuarioRequest" name="eliminarUsuarioRequest"/>
+
+         <wsdl:output message="impl:eliminarUsuarioResponse" name="eliminarUsuarioResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generaXML">
+
+         <wsdl:input message="impl:generaXMLRequest" name="generaXMLRequest"/>
+
+         <wsdl:output message="impl:generaXMLResponse" name="generaXMLResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultar">
+
+         <wsdl:input message="impl:consultarRequest" name="consultarRequest"/>
+
+         <wsdl:output message="impl:consultarResponse" name="consultarResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="registrarProd">
+
+         <wsdl:input message="impl:registrarProdRequest" name="registrarProdRequest"/>
+
+         <wsdl:output message="impl:registrarProdResponse" name="registrarProdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="borrarProd">
+
+         <wsdl:input message="impl:borrarProdRequest" name="borrarProdRequest"/>
+
+         <wsdl:output message="impl:borrarProdResponse" name="borrarProdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="actualizarProd">
+
+         <wsdl:input message="impl:actualizarProdRequest" name="actualizarProdRequest"/>
+
+         <wsdl:output message="impl:actualizarProdResponse" name="actualizarProdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminarProd">
+
+         <wsdl:input message="impl:eliminarProdRequest" name="eliminarProdRequest"/>
+
+         <wsdl:output message="impl:eliminarProdResponse" name="eliminarProdResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="obtenerProductos">
+
+         <wsdl:input message="impl:obtenerProductosRequest" name="obtenerProductosRequest"/>
+
+         <wsdl:output message="impl:obtenerProductosResponse" name="obtenerProductosResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="obtenerDetalles">
+
+         <wsdl:input message="impl:obtenerDetallesRequest" name="obtenerDetallesRequest"/>
+
+         <wsdl:output message="impl:obtenerDetallesResponse" name="obtenerDetallesResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="serwewSoapBinding" type="impl:serwew">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="regresaId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="regresaIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="regresaIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="registrarUsuario">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="registrarUsuarioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="registrarUsuarioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cambiarPwd">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cambiarPwdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cambiarPwdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminarUsuario">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="eliminarUsuarioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="eliminarUsuarioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="generaXML">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="generaXMLRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="generaXMLResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="registrarProd">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="registrarProdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="registrarProdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="borrarProd">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="borrarProdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="borrarProdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="actualizarProd">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="actualizarProdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="actualizarProdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminarProd">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="eliminarProdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="eliminarProdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="obtenerProductos">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="obtenerProductosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="obtenerProductosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="obtenerDetalles">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="obtenerDetallesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="obtenerDetallesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="serwewService">
+
+      <wsdl:port binding="impl:serwewSoapBinding" name="serwew">
+
+         <wsdlsoap:address location="http://localhost:8005/WebServiceProject/services/serwew"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

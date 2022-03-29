@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height="284" version="1.1" width="348" xmlns="http://www.w3.org/2000/svg">
+<text font-family="Dialog" font-size="12" x="18" y="115">
+menschlicher Spieler 1</text>
+<ellipse cx="81" cy="63" fill="#000000" rx="8.0" ry="7.5" stroke="#000000" stroke-width="1"/>
+<ellipse cx="81" cy="63" fill="#ffffff" rx="7.0" ry="6.5" stroke="#ffffff" stroke-width="1"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="81" x2="81" y1="71" y2="86"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="71" x2="91" y1="76" y2="76"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="81" x2="76" y1="86" y2="101"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="81" x2="86" y1="86" y2="101"/>
+<text font-family="Dialog" font-size="12" x="18" y="235">
+menschlicher Spieler 2</text>
+<ellipse cx="81" cy="183" fill="#000000" rx="8.0" ry="7.5" stroke="#000000" stroke-width="1"/>
+<ellipse cx="81" cy="183" fill="#ffffff" rx="7.0" ry="6.5" stroke="#ffffff" stroke-width="1"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="81" x2="81" y1="191" y2="206"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="71" x2="91" y1="196" y2="196"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="81" x2="76" y1="206" y2="221"/>
+<line fill="#000000" stroke="#000000" stroke-width="1" x1="81" x2="86" y1="206" y2="221"/>
+<ellipse cx="262" cy="46" fill="#000000" rx="72.0" ry="32.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="262" cy="46" fill="#ffffff" rx="71.0" ry="31.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="212" y="47">
+gegen sich Selbst</text>
+<polyline fill="none" points="191,52 90,63" stroke="#000000" stroke-width="1"/>
+<ellipse cx="262" cy="142" fill="#000000" rx="72.0" ry="32.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="262" cy="142" fill="#ffffff" rx="71.0" ry="31.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="220" y="143">
+gegeneinander</text>
+<polyline fill="none" points="191,135 86,125" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="198,157 90,183" stroke="#000000" stroke-width="1"/>
+<ellipse cx="262" cy="238" fill="#000000" rx="72.0" ry="32.0" stroke="#000000" stroke-width="1"/>
+<ellipse cx="262" cy="238" fill="#ffffff" rx="71.0" ry="31.0" stroke="#ffffff" stroke-width="1"/>
+<text font-family="Dialog" font-size="12" x="237" y="239">
+gegen KI</text>
+<polyline fill="none" points="191,231 86,221" stroke="#000000" stroke-width="1"/>
+</svg>

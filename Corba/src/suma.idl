@@ -1,0 +1,7 @@
+module sumaApp{
+ 	interface suma{
+ 		long sumar(in long operador1, in long operador2);
+		oneway void shutdown();
+ 	};
+ };
+

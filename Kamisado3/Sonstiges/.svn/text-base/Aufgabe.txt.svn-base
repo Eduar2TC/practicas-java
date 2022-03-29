@@ -1,0 +1,39 @@
+Strategisches 2-Personen-Spiel - Kamisado
+
+Aufgabenstellung
+
+Bachelor-, Master- oder Diplomarbeit.
+
+Auf einem 8 x 8 -Spielbrett mit farbigen Feldern versucht jeder Spieler, einen Spielstein auf die gegnerische Grundlinie zu ziehen. Es besteht Zugzwang: Das Zielfeld des letzten gesetzten Steins bestimmt die Farbe des gegerischen Steins, der als nächstes ziehen muss.
+
+Links:
+
+http://www.michaelkleinschmidt.de/spiele/kritiken/kamisado/index.htm
+
+http://www.spieletest.at/spiel.php?ID=2766
+
+Als Bachelor-Arbeit implementieren Sie einen geringeren Funktionsumfang. Als Master- oder Diplomarbeit implementieren Sie entsprechend mehr Funktionen. Master- und Diplomarbeiten besitzen außerdem mehr wissenschaftliche Tiefe (State-of-the-Art-Anaylse, Evaluation).
+
+Use Cases:
+* Spiel gegen sich selbst
+* Spiel gegen einen Menschen
+* Spielstärke einstellen
+* Spiel speichern, laden, editieren
+* "Denkphase" des Computers abbrechen
+* Visualisierung der Computeranalyse
+
+Nicht alle Use Cases müssen implementiert werden, aber das Design und die (GUI-) Implementierung sollten diese Use Cases zumindest berücksichtigen.
+
+Funktionalitäten, Herausforderungen:
+* Spielanalyse: Eigenschaften des Spielbaums, Spielphasen (z.B. Unterteilung in Eröffnung, Mittel-, Endspiel)
+* Minimax mit Alpha-Beta-Pruning (und gegebenenfalls anderen State-of-the-Art-Mechanismen: quiescence search, ...) in Verbindung mit iterativer Tiefensuche.
+* Zustände und Aktionen (Züge) repräsentieren
+* Bewertungsfunktionen designen und verifizieren/testen.
+* GUI
+Bei einem Spiel mit hoher Komplexität ist es sinnvoll, die Algorithmen in vereinfachten Szenarien zu testen / zu evaluieren (kleineres Spielfeld, wenige Spielsteine)
+* Master/Diplom: (wo) ist (welches) Lern(verfahr)en sinnvoll einsetzbar?
+Betreuer
+
+
+Betreuer:  Stefan Fricke
+Email:   stefan.frickedai-labor.de

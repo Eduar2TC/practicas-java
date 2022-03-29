@@ -1,0 +1,336 @@
+package Tablero;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Arrays;
+
+import Archivo.Archivo;
+
+public class Tablero {
+	
+	int value_FuncionF;
+	int value_heuristica_H;	// numero de casillas fuera de lugar
+	int value_heuristica_costoG; //Cuato ha costado llegar a este nodo
+	
+	
+	String[][] estado = null;
+	
+	public Tablero() throws IOException {
+		
+		this.estado = matrizInicial();
+		this.value_heuristica_costoG = 0;
+		this.value_heuristica_costoG = 0;
+		this.value_FuncionF = this.value_heuristica_costoG + this.value_heuristica_costoG;
+	}
+	
+	String [][] matrizInicial(){
+		Archivo nuevoArchivo = new Archivo("src/Archivo/archivo.txt");
+		String matriz[][] = null;
+		try {
+			matriz = nuevoArchivo.leerArchivo();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return matriz;
+	} 
+	
+	//seters y getters
+	public int getValorF() {
+		
+		return this.value_FuncionF;
+	}
+	
+	public void setValorF(int nuevoValorF) {
+		this.value_FuncionF = nuevoValorF;
+	}
+	
+	public int getValorG() {
+		return this.value_heuristica_costoG;
+	}
+	
+	public void setValorG(int nuevoValorG) {
+		this.value_heuristica_costoG = nuevoValorG;
+	}
+	
+	Boolean esSolucionable() {
+		
+		return false;
+	}
+	
+	public int[] getPosicionCasillaVacia(String arreglo[][]) {
+		int posicion [] = null;
+        for (int i=0; i < arreglo[0].length; i++) {
+        	
+            for (int j=0; j < arreglo[i].length; j++) {
+				  
+            	 if(arreglo[i][j].equals("0")) {
+            		 //System.out.println("Casilla encontrada en la posicion: " + i + "," + j);
+            		 posicion = new int []{i, j};  
+            	 }
+            }
+         }
+		return posicion;
+	}
+	
+	public int obtenieneNumeroDeAyacentes(String arreglo[][]) {// indica el numero de hijos que se crearán del estdo padre 
+		
+		int nroAdyacentes = 4;
+		
+		for(int i =0; i < arreglo[0].length; i++) {
+			
+			for(int j = 0; j < arreglo[i].length; j++) {
+				
+				if(  	i == 0 && j == 0 && arreglo[i][j].equals("0") || 
+						i == 0 && j == arreglo[i].length-1 && arreglo[i][j].equals("0") || 
+						i == arreglo[0].length-1 && j == 0 && arreglo[i][j].equals("0") ||
+						i == arreglo[0].length-1 && j == arreglo[i].length-1 && arreglo[i][j].equals("0") ) {
+					 nroAdyacentes = 2;
+					
+				}		
+				
+				else if( (i < arreglo[0].length-1 && j ==0) && arreglo[i][j].equals("0") || (i < arreglo[0].length-1 && j == arreglo[i].length-1) && arreglo[i][j].equals("0") ) {
+					
+					nroAdyacentes = 3;
+		
+				}
+					
+			
+				else if( (i == 0 && j < arreglo[i].length-1) && arreglo[i][j].equals("0") || (i == arreglo[0].length-1 && j < arreglo[i].length-1) && arreglo[i][j].equals("0")) {
+					
+					nroAdyacentes = 3;
+		
+				}
+
+			}
+		}
+		
+		return nroAdyacentes;
+	}
+	
+	public String [][] copiaArreglo(String arregloOriginal[][]){
+		String nuevoArreglo[][] = new String[arregloOriginal[0].length][arregloOriginal[0].length];
+				for(int i = 0; i < arregloOriginal[0].length; i++) {
+					for(int j = 0; j < arregloOriginal[i].length; j++) {
+						nuevoArreglo[i][j] = arregloOriginal[i][j];
+					}
+				}
+		return nuevoArreglo;
+	}
+	
+	
+	public void generaHijos(String[][] padre ) {  //El padre se manda a close y los hijos generados a open
+		
+		int numeroHijos = obtenieneNumeroDeAyacentes(padre);
+		int cordenadaPosicion[] = getPosicionCasillaVacia(padre);
+		
+		int arregloTemp0[] = {0, 0}; // origen
+		int arregloTemp1[] = {0, padre.length-1}; // sup-der
+		
+		
+		int arregloTemp2[] = {padre[0].length-1, 0}; // inf-izq
+		int arregloTemp3[] = {padre[0].length-1, padre[0].length-1}; //inf-der
+		
+		switch(numeroHijos) {
+			case 2:{  // esquinas
+				
+				if(Arrays.equals(cordenadaPosicion, arregloTemp0) ) {  // sup-isq
+					
+					String hijo0[][] = copiaArreglo(padre);  // hijo 1
+					String hijo1[][] = copiaArreglo(padre);	// hijo 2
+					
+					for(int i =0; i< padre[0].length; i++) {
+						
+						for(int j = 0; j < padre[i].length; j++) {
+							
+							if( hijo0[i][j].equals("0") && (i == 0 && j == 0) ) {
+								String temp1 = hijo0[i+1][j];
+								String casillaVacia = hijo0[i][j];
+								
+								hijo0[i+1][j] = casillaVacia;
+								hijo0[i][j] = temp1;
+								
+							}
+							if(hijo1[i][j].equals("0") && (i == 0 && j == 0)) {
+								String temp2 = hijo1[i][j+1];
+								String casillaVacia = hijo0[i][j];
+								hijo1[i][j+1] = casillaVacia;
+								hijo1[i][j] = temp2;
+							}
+						}
+					}					
+				}
+				
+				if(Arrays.equals(cordenadaPosicion, arregloTemp1) ) {  // sup-der
+					
+					String hijo0[][] = copiaArreglo(padre);  // hijo 1
+					String hijo1[][] = copiaArreglo(padre);	// hijo 2
+					
+					for(int i =0; i< padre[0].length; i++) {
+						
+						for(int j = 0; j < padre[i].length; j++) {
+							
+						if( hijo0[i][j].equals("0") && (i == 0 && j == hijo0[0].length-1) ) {
+								String casillaVacia = hijo0[i][j];
+								hijo0[i][j]= hijo0[i+1][j];
+								hijo0[i+1][j] = casillaVacia;
+								
+								System.out.println();
+								for(int k = 0; k < hijo0[0].length; k++) {
+									for(int l =0; l < hijo0[k].length; l++) {
+										System.out.print(hijo0[k][l] + " ");
+									}
+									System.out.println();
+								}
+							}
+						if( hijo1[i][j].equals("0") && (i == 0 && j == hijo1[0].length-1) ) {
+								String casillaVacia = hijo1[i][j];
+								hijo1[i][j] = hijo1[i][j-1];
+								hijo1[i][j-1] = casillaVacia;
+								
+								System.out.println();
+								for(int k = 0; k < hijo1[0].length; k++) {
+									for(int l =0; l < hijo1[k].length; l++) {
+										System.out.print(hijo1[k][l] + " ");
+									}
+									System.out.println();
+								}
+							
+							}
+						}
+					}
+										
+				}
+
+				if(Arrays.equals(cordenadaPosicion, arregloTemp2) ) {  // inf-izq
+					
+					String hijo0[][] = copiaArreglo(padre);  // hijo 1
+					String hijo1[][] = copiaArreglo(padre);	// hijo 2
+					
+					for(int i =0; i< padre[0].length; i++) {
+						
+						for(int j = 0; j < padre[i].length; j++) {
+							
+						if( hijo0[i][j].equals("0") && (i == hijo0[0].length-1 && j == 0 ) ) {
+								String casillaVacia = hijo0[i][j];
+								hijo0[i][j]= hijo0[i-1][j];
+								hijo0[i-1][j] = casillaVacia;
+								
+								System.out.println();
+								for(int k = 0; k < hijo0[0].length; k++) {
+									for(int l =0; l < hijo0[k].length; l++) {
+										System.out.print(hijo0[k][l] + " ");
+									}
+									System.out.println();
+								}
+							}
+						if( hijo1[i][j].equals("0") && (i == hijo1[0].length-1 && j == 0 ) ) {
+								String casillaVacia = hijo1[i][j];
+								hijo1[i][j] = hijo1[i][j+1];
+								hijo1[i][j+1] = casillaVacia;
+								
+								System.out.println();
+								for(int k = 0; k < hijo1[0].length; k++) {
+									for(int l =0; l < hijo1[k].length; l++) {
+										System.out.print(hijo1[k][l] + " ");
+									}
+									System.out.println();
+								}
+							
+							}
+						}
+					}
+										
+				}
+
+				if(Arrays.equals(cordenadaPosicion, arregloTemp2) ) {  // inf-der
+					
+					String hijo0[][] = copiaArreglo(padre);  // hijo 1
+					String hijo1[][] = copiaArreglo(padre);	// hijo 2
+					
+					for(int i =0; i< padre[0].length; i++) {
+						
+						for(int j = 0; j < padre[i].length; j++) {
+							
+						if( hijo0[i][j].equals("0") && (i == hijo0[0].length-1 && j == hijo0[0].length-1 ) ) {
+								String casillaVacia = hijo0[i][j];
+								hijo0[i][j]= hijo0[i-1][j];
+								hijo0[i-1][j] = casillaVacia;
+								
+								System.out.println();
+								for(int k = 0; k < hijo0[0].length; k++) {
+									for(int l =0; l < hijo0[k].length; l++) {
+										System.out.print(hijo0[k][l] + " ");
+									}
+									System.out.println();
+								}
+							}
+						if( hijo1[i][j].equals("0") && (i == hijo1[0].length-1 && j == hijo0[0].length-1 ) ) {
+								String casillaVacia = hijo1[i][j];
+								hijo1[i][j] = hijo1[i][j-1];
+								hijo1[i][j-1] = casillaVacia;
+								
+								System.out.println();
+								for(int k = 0; k < hijo1[0].length; k++) {
+									for(int l =0; l < hijo1[k].length; l++) {
+										System.out.print(hijo1[k][l] + " ");
+									}
+									System.out.println();
+								}
+							
+							}
+						}
+					}
+										
+				}
+				
+				break;
+			}
+			case 3:{ // casillas en las orillas
+				
+				break;
+			}
+			case 4:{ // casillas interiore
+				
+				break;
+			}
+		}
+		
+		for(int i =0; i < numeroHijos; i++) {
+			
+		}
+	}
+	
+	public void intercambioDeCasillas() {
+		
+	}
+	
+	
+	public void solucionH_G() {
+		
+	}
+	public void solucionManhatan() {
+		
+	}
+	
+	public void imprimeTablero() {
+        for (int i=0; i < estado[0].length; i++) {
+        	
+            for (int j=0; j < estado[i].length; j++) {
+				   System.out.print(estado[i][j]+" ");
+            }
+            
+			System.out.print("\n");
+         }
+	}
+	
+	public static void main(String[] args) throws IOException {
+		
+		Tablero t = new Tablero();
+		t.imprimeTablero();
+		//t.getPosicionCasillaVacia(t.estado);
+		//System.out.println(t.obtenieneNumeroDeAyacentes(t.estado));
+		t.generaHijos(t.estado);
+	}
+	
+}

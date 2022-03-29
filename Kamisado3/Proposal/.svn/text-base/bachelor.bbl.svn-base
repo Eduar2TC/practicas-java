@@ -1,0 +1,122 @@
+\begin{thebibliography}{14}
+% this bibliography was produced with the style dinat.bst v2.5
+\makeatletter
+\newcommand{\dinatlabel}[1]%
+{\ifNAT@numbers\else\NAT@biblabelnum{#1}\hspace{2\labelsep}\fi}
+\makeatother
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax\def\url#1{\texttt{#1}}\fi
+
+\bibitem[Berninghaus u.\,a.(2010)Berninghaus, Ehrhart und Güth]{strat}
+\dinatlabel{Berninghaus u.\,a. 2010} \textsc{Berninghaus}, S.~;
+  \textsc{Ehrhart}, K.M.~; \textsc{Güth}, W.:
+\newblock \emph{{Strategische Spiele: Eine Einführung in die Spieltheorie}}.
+\newblock Springer, 2010. --
+\newblock ISBN 3642116507
+
+\bibitem[{Burley Games}(2011)]{kamisado.com}
+\dinatlabel{{Burley Games} 2011} \textsc{{Burley Games}}:
+\newblock \emph{Announcing Kamisado!}
+\newblock 2011. --
+\newblock URL \url{http://www.kamisado.com/index.php/kamisado}. --
+  Zugriffsdatum: \today
+
+\bibitem[Conny(2004)]{conny}
+\dinatlabel{Conny 2004} \textsc{Conny}:
+\newblock \emph{Spiralmodell nach Boehm (1988)}.
+\newblock Wikipedia.
+\newblock November 2004. --
+\newblock URL
+  \url{http://de.wikipedia.org/w/index.php?title=Datei:Spiralmodel_nach_Boehm.png&filetimestamp=20080312012210}.
+  -- Zugriffsdatum: \today
+
+\bibitem[Floyd(2003)]{spiral}
+\dinatlabel{Floyd 2003} \textsc{Floyd}, Christiane:
+\newblock \emph{Vorgehensmodelle für Software-Projekte}.
+\newblock Vorlesung 5 zu Softwaretechnik und Software-Ergonomie an der
+  Universität Hamburg.
+\newblock 2003. --
+\newblock URL
+  \url{http://swt-www.informatik.uni-hamburg.de/attachments/LVTermine/STE-VL4-WS-03-04.pdf}.
+  -- Zugriffsdatum: \today
+
+\bibitem[Fricke(2010)]{vl}
+\dinatlabel{Fricke 2010} \textsc{Fricke}, Stefan:
+\newblock \emph{Grundlagen der Künstlichen Intelligenz - Strategische Spiele}.
+\newblock Vorlesungsfolien zum Modul Grundlagen der Künstlichen Intelligenz an
+  der Technischen Universität Berlin.
+\newblock November 2010
+
+\bibitem[{HUCH! \& friends}(2010)]{huch}
+\dinatlabel{{HUCH! \& friends} 2010} \textsc{{HUCH! \& friends}}:
+\newblock \emph{Kamisado}.
+\newblock 2010. --
+\newblock URL
+  \url{http://www.huchandfriends.de/page/de/Die-Spiele/Strategiespiele/kamisado.php}.
+  -- Zugriffsdatum: \today
+
+\bibitem[Krasner und Pope(1988)]{mvc}
+\dinatlabel{Krasner und Pope 1988} \textsc{Krasner}, G.E.~; \textsc{Pope},
+  S.T.:
+\newblock A Description of the Model-View-Controller User Interface Paradigm in
+  the Smalltalk-80 System.
+\newblock In: \emph{Journal of Object Oriented Programming}
+\newblock 1 (1988), Nr.~3, S.~26--49
+
+\bibitem[Ledinger(2010)]{spieletest}
+\dinatlabel{Ledinger 2010} \textsc{Ledinger}, Christoph:
+\newblock \emph{Kamisado}.
+\newblock www.spieletest.at - Wir testen Spiele!
+\newblock Mai 2010. --
+\newblock URL \url{http://www.spieletest.at/spiel.php?ID=2766}. --
+  Zugriffsdatum: \today
+
+\bibitem[Luibl(2011)]{4players}
+\dinatlabel{Luibl 2011} \textsc{Luibl}, Jörg:
+\newblock \emph{Special: Kamisado}.
+\newblock 4Player.de - Das Spielemagazin.
+\newblock April 2011. --
+\newblock URL
+  \url{http://www.4players.de/4players.php/dispbericht/Spielkultur/Special/26518/71553/0/Kamisado.html}.
+  -- Zugriffsdatum: \today
+
+\bibitem[Morse und Anderson(2004)]{mvc2}
+\dinatlabel{Morse und Anderson 2004} \textsc{Morse}, S.F.~; \textsc{Anderson},
+  C.L.:
+\newblock Introducing Application Design and Software Engineering Principles in
+  introductory CS Courses: Model-View-Controller Java Application Framework.
+\newblock In: \emph{Journal of Computing Sciences in Colleges}
+\newblock 20 (2004), Nr.~2, S.~190--201. --
+\newblock ISSN 1937-4771
+
+\bibitem[Rasmusen(2007)]{info}
+\dinatlabel{Rasmusen 2007} \textsc{Rasmusen}, E.:
+\newblock \emph{{Games and Information: An Introduction to Game Theory}}.
+\newblock Blackwell, 2007. --
+\newblock ISBN 1405136669
+
+\bibitem[Russel und Norvig(2003)]{ai}
+\dinatlabel{Russel und Norvig 2003} \textsc{Russel}, Stuart~; \textsc{Norvig},
+  Peter:
+\newblock \emph{Artificial Intelligence: A Modern Approach}.
+\newblock Second Edition.
+\newblock New Jersey~: Pearson Education, 2003
+\newblock (Prentice Hall Series in Artificial Intelligence). --
+\newblock ISBN 0137903952
+
+\bibitem[Shah(2007)]{minimax}
+\dinatlabel{Shah 2007} \textsc{Shah}, Rajiv~B.:
+\newblock \emph{Minimax}.
+\newblock Dictionary of Algorithms and Data Structures [online], Paul E. Black,
+  ed., U.S. National Institute of Standards and Technology.
+\newblock Januar 2007. --
+\newblock URL \url{http://www.nist.gov/dads/HTML/minimax.html}. --
+  Zugriffsdatum: \today
+
+\bibitem[Wiese(2001)]{wiese}
+\dinatlabel{Wiese 2001} \textsc{Wiese}, H.:
+\newblock \emph{{Entscheidungs- und Spieltheorie}}.
+\newblock Springer, 2001. --
+\newblock ISBN 3540427473
+
+\end{thebibliography}

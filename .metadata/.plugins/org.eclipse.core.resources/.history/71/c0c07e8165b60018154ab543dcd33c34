@@ -1,0 +1,11 @@
+package Nodo;
+
+public class Nodo {
+	int costo;
+	int funcionF;
+	int heuristicaH;
+	int heuristicaG;
+	
+	
+
+}

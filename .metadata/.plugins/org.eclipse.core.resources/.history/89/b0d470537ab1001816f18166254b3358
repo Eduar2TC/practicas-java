@@ -1,0 +1,12 @@
+
+public class Nodo {
+	
+	int valorF;
+	int valorH;
+	int valorG;
+	
+	Nodo padre;
+	
+	Nodo hijos;
+
+}

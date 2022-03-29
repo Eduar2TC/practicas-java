@@ -1,0 +1,14 @@
+
+public class Nodo {
+	
+	int valorF;
+	int valorH;
+	int valorG;
+	
+	Matrix matriz;
+	
+	Nodo padre;
+	
+	Nodo hijos;
+
+}

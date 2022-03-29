@@ -1,0 +1,15 @@
+Mögliche Bewertungskriterien (Stellungsbewerter)
+
+	- entfernung zur gegnerischen Grundlinie
+		x = (Summe Anzahl Felder zwischen eigenen Figuren bis zur gegnerischen Grundlinie) - (gleiche für Gegner)	
+	- mögliche Züge
+	
+Daten und Objekte
+
+	- Spielfeld inkl. Figuren als 2D-Array (8x8-Matrix) von Feldobjekten
+	- Feldobjekt hat Feldfarbe, Figurfarbe (falls eine drauf), Figurenstärke (Anzahl Sumo/Punkte)	
+	
+Außerdem
+
+	- Zuggenerator
+	- Zeitmesser	

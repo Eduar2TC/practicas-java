@@ -1,0 +1,43 @@
+package Estados;
+
+import Matriz.Matriz;
+
+
+//  Del estado inicial buscar la casilla vacia y crear y almacenar las matrices de los estados adyacentes
+
+/*1.- Partimos del punto inicial (Matriz Inicial), lo metemos a la lista de Open*/
+
+public class Estado {  // Puede ser Padre o hijo
+	
+	Matriz estado = null; 
+	
+	int costoG;
+	int heuristicaH;
+	
+	int funcionF = costoG + heuristicaH;
+	
+	public Estado(Matriz matrizInicial) {			//Inicializacion del estado inicial
+		this.estado = matrizInicial;
+		this.costoG = 0;
+		this.heuristicaH = 0;
+		
+	}
+	
+	public int calculaG(){
+		
+		
+		return costoG;
+	}
+	
+	public int calculaH() {
+		return costoG;
+	}
+	
+	public int calculaF() {
+		int FuncionF = this.costoG + this.heuristicaH;
+		return costoG;
+		
+	}
+	
+	
+}

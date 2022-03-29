@@ -1,0 +1,136 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="C:\Users\eduar\eclipse-workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\WebServiceProject\WEB-INF\attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="serwew" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="regresaId" qname="ns1:regresaId" returnQName="ns1:regresaIdReturn" returnType="xsd:int" soapAction="" xmlns:ns1="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:qr" type="xsd:string"/>
+   <ns2:parameter qname="ns1:idCol" type="xsd:string"/>
+  </ns2:operation>
+  <ns1:operation name="registrarUsuario" qname="ns2:registrarUsuario" returnQName="ns2:registrarUsuarioReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:noma" type="xsd:string"/>
+   <ns1:parameter qname="ns2:pasa" type="xsd:string"/>
+   <ns1:parameter qname="ns2:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns2:pas" type="xsd:string"/>
+   <ns1:parameter qname="ns2:niv" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="cambiarPwd" qname="ns3:cambiarPwd" returnQName="ns3:cambiarPwdReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:noma" type="xsd:string"/>
+   <ns1:parameter qname="ns3:pasa" type="xsd:string"/>
+   <ns1:parameter qname="ns3:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns3:pas" type="xsd:string"/>
+   <ns1:parameter qname="ns3:npas" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="eliminarUsuario" qname="ns4:eliminarUsuario" returnQName="ns4:eliminarUsuarioReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:noma" type="xsd:string"/>
+   <ns1:parameter qname="ns4:pasa" type="xsd:string"/>
+   <ns1:parameter qname="ns4:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns4:pas" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="generaXML" qname="ns5:generaXML" returnQName="ns5:generaXMLReturn" returnType="xsd:boolean" soapAction="" xmlns:ns5="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns5:clavp" type="xsd:string"/>
+   <ns1:parameter qname="ns5:nomp" type="xsd:string"/>
+   <ns1:parameter qname="ns5:catp" type="xsd:string"/>
+   <ns1:parameter qname="ns5:precd" type="xsd:float"/>
+   <ns1:parameter qname="ns5:mard" type="xsd:string"/>
+   <ns1:parameter qname="ns5:desd" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="consultar" qname="ns6:consultar" returnQName="ns6:consultarReturn" returnType="xsd:string" soapAction="" xmlns:ns6="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="registrarProd" qname="ns7:registrarProd" returnQName="ns7:registrarProdReturn" returnType="xsd:string" soapAction="" xmlns:ns7="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns7:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns7:pas" type="xsd:string"/>
+   <ns1:parameter qname="ns7:clavp" type="xsd:string"/>
+   <ns1:parameter qname="ns7:nomp" type="xsd:string"/>
+   <ns1:parameter qname="ns7:catp" type="xsd:string"/>
+   <ns1:parameter qname="ns7:precd" type="xsd:float"/>
+   <ns1:parameter qname="ns7:mard" type="xsd:string"/>
+   <ns1:parameter qname="ns7:desd" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="borrarProd" qname="ns8:borrarProd" returnQName="ns8:borrarProdReturn" returnType="xsd:string" soapAction="" xmlns:ns8="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns8:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns8:pas" type="xsd:string"/>
+   <ns1:parameter qname="ns8:clavp" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="actualizarProd" qname="ns9:actualizarProd" returnQName="ns9:actualizarProdReturn" returnType="xsd:string" soapAction="" xmlns:ns9="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns9:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns9:pas" type="xsd:string"/>
+   <ns1:parameter qname="ns9:clavp" type="xsd:string"/>
+   <ns1:parameter qname="ns9:nclavp" type="xsd:string"/>
+   <ns1:parameter qname="ns9:nomp" type="xsd:string"/>
+   <ns1:parameter qname="ns9:catp" type="xsd:string"/>
+   <ns1:parameter qname="ns9:precd" type="xsd:float"/>
+   <ns1:parameter qname="ns9:mard" type="xsd:string"/>
+   <ns1:parameter qname="ns9:desd" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="eliminarProd" qname="ns10:eliminarProd" returnQName="ns10:eliminarProdReturn" returnType="xsd:string" soapAction="" xmlns:ns10="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns10:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns10:pas" type="xsd:string"/>
+   <ns1:parameter qname="ns10:clavp" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="obtenerProductos" qname="ns11:obtenerProductos" returnQName="ns11:obtenerProductosReturn" returnType="xsd:string" soapAction="" xmlns:ns11="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns11:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns11:pas" type="xsd:string"/>
+   <ns1:parameter qname="ns11:cat" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="obtenerDetalles" qname="ns12:obtenerDetalles" returnQName="ns12:obtenerDetallesReturn" returnType="xsd:string" soapAction="" xmlns:ns12="http://consumo_sw" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns12:nom" type="xsd:string"/>
+   <ns1:parameter qname="ns12:pas" type="xsd:string"/>
+   <ns1:parameter qname="ns12:clav" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="registrarUsuario registrarProd actualizarProd cambiarPwd eliminarProd generaXML consultar obtenerDetalles eliminarUsuario borrarProd regresaId obtenerProductos"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="serwew"/>
+  <ns1:parameter name="className" value="consumo_sw.serwew"/>
+  <ns1:parameter name="wsdlServicePort" value="serwew"/>
+  <ns1:parameter name="schemaQualified" value="http://consumo_sw"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://consumo_sw"/>
+  <ns1:parameter name="wsdlServiceElement" value="serwewService"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

@@ -1,0 +1,7 @@
+module operacionesApp{
+   
+	 interface procesamiento{
+		string procesarImagenes(in string cadena1, in string cadena2, in string operador);
+		oneway void shutdown();
+	};
+};

@@ -1,0 +1,29 @@
+package productos;
+
+import java.rmi.RemoteException;
+
+import buap_api.RespProd;
+import buap_api.WebServicesBUAPPortTypeProxy;
+
+public class Productos {
+	
+	public coid getListaProductos() {
+		
+	}
+	public void getDetalleDeUnProducto(String productoNombre) {
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebServicesBUAPPortTypeProxy client = new WebServicesBUAPPortTypeProxy();
+		try {
+			
+			RespProd res = client.getProd("eduardotc", "qwerty1290", "libros");
+			System.out.println( "Fecha: " + res.getCode());
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}
+	}
+}

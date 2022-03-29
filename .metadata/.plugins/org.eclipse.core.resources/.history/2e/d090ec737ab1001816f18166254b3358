@@ -1,0 +1,14 @@
+import Archivo.Archivo;
+public class Nodo {
+	
+	int valorF;
+	int valorH;
+	int valorG;
+	
+	Matriz matriz;
+	
+	Nodo padre;
+	
+	Nodo hijos;
+
+}

@@ -1,0 +1,25 @@
+import Matriz.Matriz;
+
+
+/*Seleccionar estado de la casilla vacia
+ * Dependiendo de la posicion de la casilla vacia crear los n estados (nodos) 
+ * los cuales almacena : g, h  y f
+ * Despues se obtiene la mejor f de esos nodos
+ * 
+ * 
+ * 
+ * */
+
+public class Nodo {
+	
+	int valorF;
+	int valorH;
+	int valorG;
+	
+	Matriz matriz;
+	
+	Nodo padre;
+	
+	Nodo hijos;
+
+}

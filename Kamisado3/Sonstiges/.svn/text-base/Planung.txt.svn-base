@@ -1,0 +1,53 @@
+Planung
+
+Anforderungen
+
+	- eigenständig ausführbares Programm
+	- Spielfeld Visualisierung
+	- Spielfiguren nur regelkonform bewegen können
+	- Sieg oder Niederlage / Gewinner oder Verlierer ermitteln		
+	- Alpha-Beta-Suche (Minimax)
+		
+	Optional
+	
+	- Benutzerhandbuch
+	- Entwicklerdokumentation
+	
+	- iterative Tiefensuche
+	- Quiescence search
+	- vorgefertigte Eröffnungs-, Mittel-, Endspiele oder Standardfallen (Datenbank)
+	
+	- Schwierigkeitsgrad auswählbar (dumm, normal, superbrain)	
+	- Animierte Spielbewegungen
+	- Spielstand speichern
+	- Spielstand laden
+	- Denkphase des Computers abbrechen
+	
+	- Netzwerkfähig
+	- Android fähig und im Market erhältlich	
+	- Visualisierung der Computeranalyse
+	
+	- zweite oder dritte Spielstufe realisieren
+		
+
+Aufwandsabschätzung
+	
+	- Vorbereitung 1 Monat
+	- Core 1 Monat
+	- GUI 1 Monat
+	- Dokumente 1 Monat
+	- Test und Bugfix in grober Schätzung inklusive
+	=> Gesamtdauer 4 Monat
+	=> Fertigstellungsdatum 15.07.2011
+
+Vorgehensmodell
+	
+	- UML
+	- Spiralmodell
+	- Java
+	- Eclipse
+	- SVN
+	
+	Optional
+	
+	- JUNIT

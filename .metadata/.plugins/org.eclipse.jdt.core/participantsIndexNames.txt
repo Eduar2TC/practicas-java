@@ -1,0 +1,7 @@
+INDEX VERSION 1.130
+C:\Users\eduar\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1226886502.index
+\p9_EjemploSOAPClient\src
+C:\Users\eduar\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2292999662.index
+\WebServiceProjectClient\src
+C:\Users\eduar\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4064620138.index
+\EjemploSoapClient\src

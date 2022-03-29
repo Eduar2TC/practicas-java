@@ -1,0 +1,101 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from serwewService WSDL service -->
+
+  <service name="serwew" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://consumo_sw"/>
+      <parameter name="wsdlServiceElement" value="serwewService"/>
+      <parameter name="schemaQualified" value="http://consumo_sw"/>
+      <parameter name="wsdlServicePort" value="serwew"/>
+      <parameter name="className" value="consumo_sw.SerwewSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="serwew"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="regresaId" qname="operNS:regresaId" xmlns:operNS="http://consumo_sw" returnQName="retNS:regresaIdReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:qr" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:idCol" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="registrarUsuario" qname="operNS:registrarUsuario" xmlns:operNS="http://consumo_sw" returnQName="retNS:registrarUsuarioReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:noma" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pasa" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nom" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pas" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:niv" xmlns:pns="http://consumo_sw" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="cambiarPwd" qname="operNS:cambiarPwd" xmlns:operNS="http://consumo_sw" returnQName="retNS:cambiarPwdReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:noma" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pasa" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nom" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pas" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:npas" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="eliminarUsuario" qname="operNS:eliminarUsuario" xmlns:operNS="http://consumo_sw" returnQName="retNS:eliminarUsuarioReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:noma" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pasa" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nom" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pas" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="generaXML" qname="operNS:generaXML" xmlns:operNS="http://consumo_sw" returnQName="retNS:generaXMLReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:clavp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nomp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:catp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:precd" xmlns:pns="http://consumo_sw" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:mard" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:desd" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="consultar" qname="operNS:consultar" xmlns:operNS="http://consumo_sw" returnQName="retNS:consultarReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="registrarProd" qname="operNS:registrarProd" xmlns:operNS="http://consumo_sw" returnQName="retNS:registrarProdReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pas" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:clavp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nomp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:catp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:precd" xmlns:pns="http://consumo_sw" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:mard" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:desd" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="borrarProd" qname="operNS:borrarProd" xmlns:operNS="http://consumo_sw" returnQName="retNS:borrarProdReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pas" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:clavp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="actualizarProd" qname="operNS:actualizarProd" xmlns:operNS="http://consumo_sw" returnQName="retNS:actualizarProdReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pas" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:clavp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nclavp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:nomp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:catp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:precd" xmlns:pns="http://consumo_sw" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:mard" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:desd" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="eliminarProd" qname="operNS:eliminarProd" xmlns:operNS="http://consumo_sw" returnQName="retNS:eliminarProdReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pas" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:clavp" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="obtenerProductos" qname="operNS:obtenerProductos" xmlns:operNS="http://consumo_sw" returnQName="retNS:obtenerProductosReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pas" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:cat" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="obtenerDetalles" qname="operNS:obtenerDetalles" xmlns:operNS="http://consumo_sw" returnQName="retNS:obtenerDetallesReturn" xmlns:retNS="http://consumo_sw" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nom" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pas" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:clav" xmlns:pns="http://consumo_sw" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="registrarUsuario registrarProd actualizarProd cambiarPwd eliminarProd generaXML consultar obtenerDetalles eliminarUsuario borrarProd regresaId obtenerProductos"/>
+
+  </service>
+</deployment>
